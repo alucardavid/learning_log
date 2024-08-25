@@ -19,7 +19,7 @@ web:
   disk: 512
 
 # Set a local read/write mount for logs.
- mounts:
+mounts:
   "logs":
     source: local
     source_path: logs
