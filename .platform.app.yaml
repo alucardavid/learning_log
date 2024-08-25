@@ -1,7 +1,9 @@
 name: "ll_project"
-type: "python:3.11.9"
+type: "python:3.11"
+
 relationships:
   database: "db:postgresql"
+
 # The configuration of the app when it's exposed to the web.
 web:
   upstream:
@@ -15,14 +17,16 @@ web:
       root: "static"
       expires: 1h
       allow: true
+
 # The size of the persistent disk of the application (in MB).
-  disk: 512
+disk: 512
 
 # Set a local read/write mount for logs.
 mounts:
   "logs":
     source: local
     source_path: logs
+    
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
   build: |
